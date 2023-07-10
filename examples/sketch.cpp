@@ -25,11 +25,11 @@ std::string to_string(stoplight val)
 }
 std::optional<stoplight> from_string(std::string_view name)
 {
-    namespace ranges = std::ranges;
-    auto matches_value = [&name](const auto& v) { return name == v.second; };
-    if (const auto result = ranges::find_if(utility::stoplight_names,
-                                            matches_value)) {
-        return result->first;
+    using namespace utility;
+    if (const auto search = stoplight_names.find(name);
+                   search != stoplight_names.end()) {
+
+        return search->first;
     }
     return std::nullopt;
 }
