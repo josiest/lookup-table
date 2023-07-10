@@ -6,7 +6,7 @@
 #include <string>
 #include <iostream>
 
-#include "pi/lookup_table.hpp"
+#include "pi/containers/lookup_table.hpp"
 
 enum class stoplight {
     green, yellow, red
