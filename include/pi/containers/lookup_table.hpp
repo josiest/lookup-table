@@ -72,7 +72,7 @@ struct lookup_table {
         return std::ranges::find(mappings, value, &value_type::second);
     }
     template<std::equality_comparable_with<Key> AltKey>
-    constexpr auto find_by_key(const Key& key)
+    constexpr auto find_by_key(const AltKey& key)
     {
         return std::ranges::find(mappings, key, &value_type::first);
     }

@@ -26,11 +26,11 @@ install(TARGETS pi-lookup
         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 export(EXPORT pi-lookup-targets
-       FILE ${CMAKE_CURRENT_BINARY_DIR}/lookup-targets.cmake
+       FILE ${CMAKE_CURRENT_BINARY_DIR}/pi-lookup-targets.cmake
        NAMESPACE pi::)
 
 install(EXPORT pi-lookup-targets
-        FILE lookup-targets.cmake
+        FILE pi-lookup-targets.cmake
         NAMESPACE pi::
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/pi)
 
@@ -42,18 +42,18 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
-    ${CMAKE_CURRENT_BINARY_DIR}/lookup-config-version.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/pi-lookup-config-version.cmake
     VERSION ${PROJECT_VERSION}
     COMPATIBILITY AnyNewerVersion)
 
 configure_package_config_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/lookup-config.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/lookup-config.cmake
+    ${CMAKE_CURRENT_SOURCE_DIR}/pi-lookup-config.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/pi-lookup-config.cmake
     INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/pi)
 
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/lookup-config.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/lookup-config-version.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/pi-lookup-config.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/pi-lookup-config-version.cmake
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/pi)
 
 export(PACKAGE pi-lookup)
